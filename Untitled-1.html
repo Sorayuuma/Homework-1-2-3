@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Bài Tập DIY</h2>
+    <p>This example calls a function which performs a calculation, and returns the result:</p>
+    <p id="HW1"></p>
+    <p id="HW2"></p>
+    <p id="HW3"></p>
+    <p id="HW4"></p>
+    <p id="HW5"></p>
+    <p id="HW6"></p>
+    <p id="HW7"></p>
+    <script>
+        //Bài 1
+        function perfectSquare(i) {
+
+            // In ra tất cả số chính phương nhỏ hơn 1000
+
+            let n = prompt("Nhập số N:");
+            // let i = 0;
+
+            console.log("Các số chính phương nhỏ hơn " + n + " là: \n");
+            for (let i = 0; i <= n; i++) {
+                if (i == Math.floor(Math.sqrt(i)) * Math.floor(Math.sqrt(i))) {
+                    console.log(i);
+                }
+            }
+
+            // Cách 2:
+            console.log("Các số chính phương nhỏ hơn " + n + " là: \n");
+            let a = Math.sqrt(n);
+            for (let i = 0; i <= a; i++) {
+                if (Math.pow(i, 2) < n) {
+                    console.log(Math.pow(i, 2));
+                }
+            }
+
+        //Bài 2
+        function typeOfTriangle(a, b, c) {
+            if (0 < a <= Math.pow(10, 9) & 0 < b <= Math.pow(10, 9) & 0 < c <= Math.pow(10, 9)) {
+                if ((a + b) <= c || (b + c) <= a || (a + c) <= b) {
+                    return ("Không tồn tại");
+                }
+                else if (a == b || b == c || c == a) {
+                    return ("Tam giác cân");
+                }
+                else if (a == b == c) {
+                    return ("Tam giác đều");
+                }
+                else if (a != b & b != c & c != a) {
+                    return ("Tam giác thường");
+                }
+            }
+
+        }
+
+        //Bài 3
+        function countDigits(num) {
+            if (0 < num <= 10 ** 9) {
+                return num.toString().length;
+            }
+        }
+
+
+        //Bài 4
+        function divisibility(a, b) {
+            let cap = prompt("Nhập số N:");
+            while (i < Math.sqrt(cap)) {
+                if (((a + i) % b) == 0) {
+                    return ((a + i) % b);
+                }
+                i++;
+            }
+        }
+
+
+        //Bài 5
+        function isSpecialNumber(num) {
+            for (let i = 1; i = num; i++) {
+                let cumCount = 0;
+                if ((num % i) == 0) {
+                    cumCount += 1;
+                }
+
+
+            }
+            return cumCount;
+        }
+
+
+        //Bài 6
+
+        document.getElementById("HW1").innerHTML = perfectSquare(1);
+        document.getElementById("HW2").innerHTML = typeOfTriangle(4, 4, 4);
+        document.getElementById("HW3").innerHTML = countDigits(9329);
+        document.getElementById("HW4").innerHTML = divisibility(10, 4);
+        document.getElementById("HW5").innerHTML = isSpecialNumber(28);
+
+    </script>
+
+</body>
+
+</html>
